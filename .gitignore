@@ -1,0 +1,4 @@
+dataset
+mmdetection/wandb
+.ipynb_checkpoints
+.idea
