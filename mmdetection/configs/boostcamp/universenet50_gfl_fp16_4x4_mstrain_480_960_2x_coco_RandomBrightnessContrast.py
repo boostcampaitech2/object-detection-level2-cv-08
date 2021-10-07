@@ -38,6 +38,6 @@ log_config = dict(
     interval=50,
     hooks=[
         dict(type="TextLoggerHook"),
-        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle-object_detection", name="universenet50_gfl_fp16_4x4_mstrain_480_960_2x_coco_RandomBrightnessContrast")),
+        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle_trash_OD", name="universenet50_gfl_fp16_4x4_mstrain_480_960_2x_coco_RandomBrightnessContrast")),
     ],
 )
