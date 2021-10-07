@@ -20,6 +20,12 @@
 - pip install openmim
 - mim install mmdet
 
+- conda create -n yolov5 python=3.8 -y
+- conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch -y
+- cd yolov5 
+- pip install -r requirements.txt
+
+- python example.py --datasets COCO --img_path ../dataset/train/ --label ../dataset/train.json --convert_output_path ../dataset/ --img_type ".jpg" --manifest_path ./ --cls_list_file recycle.names
 ### Install Requirements
 - `pip install -r requirements.txt`
 
