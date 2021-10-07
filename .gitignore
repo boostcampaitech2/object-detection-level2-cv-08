@@ -1,5 +1,4 @@
 dataset
 mmdetection/wandb
-mmdetection/configs/boostcamp
 .ipynb_checkpoints
 .idea
