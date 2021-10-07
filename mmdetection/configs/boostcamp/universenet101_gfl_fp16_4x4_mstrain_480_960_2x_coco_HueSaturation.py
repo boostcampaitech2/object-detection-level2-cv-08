@@ -2,7 +2,7 @@ pretrained = 'https://github.com/shinya7y/UniverseNet/releases/download/20.07/un
 
 _base_ = [
     'models/universenet101_gfl.py',
-    'config/dataset_mstrain_480_960_Blur.py',
+    'config/dataset_mstrain_480_960_HueSaturation.py',
     'config/default_runtime.py',
     'config/schedule.py'
 ]
@@ -37,6 +37,6 @@ log_config = dict(
     interval=50,
     hooks=[
         dict(type="TextLoggerHook"),
-        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle-object_detection", name="universenet101_gfl_fp16_4x4_mstrain_480_960_2x_coco")),
+        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle_trash_OD", name="universenet101_gfl_fp16_4x4_mstrain_480_960_2x_coco_HueSaturation")),
     ],
 )
