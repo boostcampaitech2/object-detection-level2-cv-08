@@ -17,6 +17,7 @@ log_config = dict(
     interval=50,
     hooks=[
         dict(type="TextLoggerHook"),
-        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle-object_detection", name="vfnet_x101_64x4d_fpn_mdconv_c3-c5_mstrain")),
+        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle_trash_OD", name="vfnet_x101_64x4d_fpn_mdconv_c3-c5_mstrain")),
     ],
 )
+wandb.init(project='recycle_trash_OD', entity='boostcampcv08')
