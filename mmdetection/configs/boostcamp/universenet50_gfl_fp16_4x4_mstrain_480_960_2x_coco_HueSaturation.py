@@ -1,8 +1,8 @@
-pretrained = 'https://github.com/shinya7y/UniverseNet/releases/download/20.07/universenet101_gfl_fp16_4x4_mstrain_480_960_2x_coco_20200716_epoch_24-1b9a1241.pth'  # noqa
+pretrained = 'https://github.com/shinya7y/UniverseNet/releases/download/20.07/universenet50_gfl_fp16_4x4_mstrain_480_960_2x_coco_20200729_epoch_24-c9308e66.pth'  # noqa
 
 _base_ = [
-    'models/universenet101_gfl.py',
-    'config/dataset_mstrain_480_960.py',
+    'models/universenet50_gfl.py',
+    'config/dataset_mstrain_480_960_HueSaturation.py',
     'config/default_runtime.py',
     'config/schedule.py'
 ]
@@ -25,6 +25,7 @@ optimizer = dict(type='SGD', lr=0.02, momentum=0.9, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(
+    _delete_=True,
     policy='step',
     warmup='linear',
     warmup_iters=500,
@@ -37,6 +38,6 @@ log_config = dict(
     interval=50,
     hooks=[
         dict(type="TextLoggerHook"),
-        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle-object_detection", name="universenet101_gfl_fp16_4x4_mstrain_480_960_2x_coco")),
+        dict(type="WandbLoggerHook", init_kwargs=dict(project="recycle-object_detection", name="universenet50_gfl_fp16_4x4_mstrain_480_960_2x_coco_HueSaturation")),
     ],
 )
