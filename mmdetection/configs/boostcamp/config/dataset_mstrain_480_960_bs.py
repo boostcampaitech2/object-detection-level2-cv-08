@@ -84,7 +84,7 @@ train_pipeline = [
         },
         update_pad_shape=False,
         skip_img_without_anno=True),
-    dict(type="MixUp", p=0.25, min_buffer_size=2, pad_val=tuple(img_norm_cfg["mean"][::-1])),    
+    dict(type="Mixup", p=0.25, min_buffer_size=2, pad_val=tuple(img_norm_cfg["mean"][::-1])),    
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='Pad', size_divisor=32),
