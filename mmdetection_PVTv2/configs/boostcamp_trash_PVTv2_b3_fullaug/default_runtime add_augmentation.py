@@ -1,4 +1,3 @@
-# checkpoint_config = dict(interval=1)
 checkpoint_config = dict(interval=1, max_keep_ckpts=5)
 # yapf:disable
 log_config = dict(
@@ -6,7 +5,7 @@ log_config = dict(
     hooks=[
         dict(type='TextLoggerHook'),
         # dict(type='TensorboardLoggerHook')
-        dict(type='WandbLoggerHook',init_kwargs=dict(project='recycle_trash_OD',name="cascade_rcnn_r50_fpn_PVTv2_b2_custom"))
+        dict(type='WandbLoggerHook',init_kwargs=dict(project='recycle_trash_OD',name="cascade_rcnn_r50_fpn_PVTv2_b3_custom_fullaug"))
     ])
 # yapf:enable
 custom_hooks = [dict(type='NumClassCheckHook')]

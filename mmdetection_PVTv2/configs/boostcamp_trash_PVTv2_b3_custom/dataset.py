@@ -51,4 +51,4 @@ data = dict(
         img_prefix=data_root,
         classes = classes,
         pipeline=test_pipeline))
-evaluation = dict(interval=2, metric='bbox')
+evaluation = dict(interval=5, metric='bbox', classwise=True)
