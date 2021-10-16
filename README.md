@@ -37,7 +37,7 @@ __Install Requirements__
 
 ```bash
 cd yolov5-master
-python train.py --ms
+python train.py --img 1024 --batch 4 --multi-scale --data data/recycle.yaml --weights yolov5x6.pt
 ```
 
 ### PVT v2
