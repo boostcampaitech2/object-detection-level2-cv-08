@@ -311,7 +311,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 - test dataset과 유사한 validation dataset을 찾기 어려워 연구가 진행될수록 model을 개선시키기 위한 뚜렷한 판단의 근거가 부족했습니다.
 - LB mAP를 높이기 위해서는 bounding box를 많이 치는 것이 효과가 있었고 그러다 보니 도출된 결과를 확인했을때 이걸 detection했다고 할 수 있는지 의문이 들었고 mAP가 평가 지표로 적합한가 의문이 들었습니다.
 
-<table>
+<table align="center">
     <tr>
         <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" /><br/>
             <p align='center'> mAP 0.672</p>
