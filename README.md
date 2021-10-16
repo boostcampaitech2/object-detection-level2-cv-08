@@ -208,12 +208,9 @@ Test set의 mAP50(Mean Average Precision)로 평가
 ![images](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b0ff425c-f802-4188-a4df-41b1befbd3eb/BoxesPerCategory.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T114011Z&X-Amz-Expires=86400&X-Amz-Signature=ca7a2ae161882c480c242d4ee9bfa9b5649152beee74cf07809810929b373c8e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22BoxesPerCategory.png%22)
 위 이미지에서 보이는 바와 같이 Class별 bbox 수의 불균형이 심하고, 배터리의 경우 데이터 수가 159개(평균 2,314 개)뿐입니다.
 
-<div>
-<center><img src="https://i.imgur.com/DFKDvXF.png"></center>
-</div>
-<div>
-<center><img src="https://i.imgur.com/H27mkEx.png"></center>
-</div>
+<p align="center"><img src="https://i.imgur.com/DFKDvXF.png"></p>
+<p align="center"><img src="https://i.imgur.com/H27mkEx.png"></p>
+
 
 ① Class Dependency
 - 전단지의 경우 일반 쓰레기와 종이 두 가지로 annotation되어 있음
@@ -315,14 +312,14 @@ Test set의 mAP50(Mean Average Precision)로 평가
 - LB mAP를 높이기 위해서는 bounding box를 많이 치는 것이 효과가 있었고 그러다 보니 도출된 결과를 확인했을때 이걸 detection했다고 할 수 있는지 의문이 들었고 mAP가 평가 지표로 적합한가 의문이 들었습니다.
 
 <table>
-  <tr>
-    <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" /><br/>
-        <p align='center'> mAP 0.672</p>
-    </td>
-    <td><img width="300" src="https://i.imgur.com/OuI6iNY.png" /><br/>
-      <p align='center'> mAP 0.672</p>
-    </td>
-  </tr>
+    <tr>
+        <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" /><br/>
+            <p align='center'> mAP 0.672</p>
+        </td>
+        <td><img width="300" src="https://i.imgur.com/OuI6iNY.png" /><br/>
+            <p align='center'> mAP 0.482</p>
+        </td>
+    </tr>
 </table>
 
 
@@ -341,4 +338,3 @@ Test set의 mAP50(Mean Average Precision)로 평가
 <p><span style="background-color:#EEEEEE;">네이버 커넥트재단 - 재활용 쓰레기 데이터셋 / CC BY 2.0
 https://stages.ai/competitions/76/overview/description
 </span></p>
-
