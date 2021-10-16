@@ -160,7 +160,7 @@ python ensemble.py ensemble.json
 
 ### 평가 방법
 
-Test set의 mAP50(Mean Average Precision)로 평가  
+Test set의 mAP50(Mean Average Precision)로 평가
 - Object Detection에서 사용하는 대표적인 성능 측정 방법
 - Ground Truth 박스와 Prediction 박스간 IoU(Intersection Over Union, Detector의 정확도를 평가하는 지표)가 50이 넘는 예측에 대해 True라고 판단합니다.
 - Example of IoU  
@@ -183,7 +183,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
         
     - **Blue**
-        - TP = 2, FP = 1
+        - TP = 2, FP = 1  
         - 총 3개의 Blue 박스 중 두 개의 박스는 객체를 잘 detection하였습니다. (TP) 
             우측 하단의 박스는 객체 위치를 정확히 detection하지 못했습니다. (FP)
         
@@ -212,7 +212,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 <p align="center"><img src="https://i.imgur.com/H27mkEx.png"></p>
 
 
-① Class Dependency  
+① Class Dependency
 - 전단지의 경우 일반 쓰레기와 종이 두 가지로 annotation되어 있음
 - 유리와 투명 플라스틱이 매끈한 표면, 투명함 등 이미지상에서 유사한 특징을 보임
 - 얇은 물체(노끈이나 줄 등)에 대한 background Error가 아주 높은 경향을 보임
@@ -287,15 +287,12 @@ Test set의 mAP50(Mean Average Precision)로 평가
 더 자세한 기록은 [더보기...](https://docs.google.com/spreadsheets/d/1xw11I8pUZY8CGaE0jXeE4KGokvK-zbpxHdKKYsyt_SI/edit#gid=265349216)
 
 ## 최종 Ensemble된 모형
-
-각 model별로 가장 LB score가 좋았던 버전 5개를 Ensemble하여 최종 모델을 생성하였습니다.
-
-**그림**
+<p align="center"><img src="https://i.imgur.com/mFpw3R3.png"></p>
+각 model별로 가장 LB score가 좋았던 버전 5개를 Ensemble하여 최종 모델을 생성  
 
 # 회고
 
 ## 잘했던 점
-- 절취선 밑으로 안 내려갔다~!
 - mmdetection 라이브러리를 활용하여 object detection의 전반적인 task를 수행해 볼 수 있었습니다.
 - mAP, NMS, WBF등 object detection과 관련된 용어들에 대해 공부 할 수 있었습니다.
 - object detection에 관련된 다른 대회들(Kaggle, Dacon)을 찾아보고 대회에서 활용된 기법들을 이번 대회에 적용시켜 봄으로써 성능 변화나 실제로 적용시켰을 때의 어려움 등을 경험해보고 이와 관련된 내용으로 팀원들과 소통하여 성장을 도모했습니다.
@@ -311,6 +308,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 - test dataset과 유사한 validation dataset을 찾기 어려워 연구가 진행될수록 model을 개선시키기 위한 뚜렷한 판단의 근거가 부족했습니다.
 - LB mAP를 높이기 위해서는 bounding box를 많이 치는 것이 효과가 있었고 그러다 보니 도출된 결과를 확인했을때 이걸 detection했다고 할 수 있는지 의문이 들었고 mAP가 평가 지표로 적합한가 의문이 들었습니다.
 
+
 <table align="center">
     <tr>
         <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" /><br/>
@@ -322,12 +320,11 @@ Test set의 mAP50(Mean Average Precision)로 평가
     </tr>
 </table>
 
-
 ## 팀원들의 한마디
 
 - 한건우 : 외부 라이브러리를 사용할 때는 항상 검증하고 사용해야한다는 점을 다시 한번 느끼게 되었습니다.
 - 박준혁 : 첫 object detection 대회를 경험함으로서 많은 어려움이 있었으나 팀원들과의 소통으로 잘 해결해나갔고, 앞으로도 이런 object detection task에 대한 감을 얻을 수 있어서 좋았습니다. 팀원 모두 대회를 열심히 진행해주고 같이 고민해주어서 감동이였어요~!
-- 홍요한 : 
+- 홍요한 : 라이브러리에 익숙해지는데 시간이 오래 걸려 더 많은 실험을 못했는데 다음 대회에는 더 많은 시도를 해보고 싶습니다!
 - 황원상 : 이제 감을 잡아가는 것 같습니다. 다음 대회 때는 날아가봅시다.
 - 박범수 : 두번째 competition이지만 아직도 부족한게 많다고 느끼는 대회였습니다. 앞으로는 조금 더 체계적으로 대회를 진행해야겠다는 걸 깨달았습니다.
 - 서희수 : 협업을 중요하다고 생각해 왔는데 다양한 라이브러리로 실험을 진행해야 하는 상황에서는 우선시 하지 않을 필요도 있다고 깨닫게 되었고, 전반적인 detection task를 알아갈 수 있었다는 점에서 의미 있지만 라이브러리 튜닝만 하다 끝났다고 생각이 들기도 해서 아쉬운 마음이 남습니다. 모두 수고 많으셨어요!
@@ -335,6 +332,6 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 # Reference
 
-<p><span style="background-color:#EEEEEE;">네이버 커넥트재단 - 재활용 쓰레기 데이터셋 / CC BY 2.0<br/>
+<p><span style="background-color:#EEEEEE;">네이버 커넥트재단 - 재활용 쓰레기 데이터셋 / CC BY 2.0
 https://stages.ai/competitions/76/overview/description
 </span></p>
