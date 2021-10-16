@@ -248,9 +248,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 
 ## 실험 히스토리
-<div>
-<center><b>Wandb를 활용한 실험 관리</b></center>
-</div>
+<p align="center">Wandb를 활용한 실험 관리</p>
 
 ![](https://i.imgur.com/D44tEOj.png)
 
