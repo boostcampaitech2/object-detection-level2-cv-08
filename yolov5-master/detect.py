@@ -7,6 +7,7 @@ Usage:
 """
 
 import argparse
+import csv
 import sys
 from pathlib import Path
 
@@ -55,15 +56,22 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
         hide_labels=False,  # hide labels
         hide_conf=False,  # hide confidences
         half=False,  # use FP16 half-precision inference
+        ai_stage=False,  # save csv file for submission to AI Stage
         ):
     source = str(source)
     save_img = not nosave and not source.endswith('.txt')  # save inference images
     webcam = source.isnumeric() or source.endswith('.txt') or source.lower().startswith(
         ('rtsp://', 'rtmp://', 'http://', 'https://'))
 
-    # Directories
+    # Directories and Paths
     save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
     (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+    save_ai_stage_csv = save_dir / 'labels' / ('ai_stage_' + name + '.csv')
+
+    if ai_stage:
+        with open(save_ai_stage_csv, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['image_id', 'PredictionString'])
 
     # Initialize
     set_logging()
@@ -194,7 +202,8 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             if len(det):
                 # Rescale boxes from img_size to im0 size
-                det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
+                # det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
+                det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape)
 
                 # Print results
                 for c in det[:, -1].unique():
@@ -202,6 +211,7 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                     s += f"{n} {names[int(c)]}{'s' * (n > 1)}, "  # add to string
 
                 # Write results
+                ai_stage_prediction_results = []
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
@@ -215,6 +225,16 @@ def run(weights=ROOT / 'yolov5s.pt',  # model.pt path(s)
                         annotator.box_label(xyxy, label, color=colors(c, True))
                         if save_crop:
                             save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
+
+                    if ai_stage:
+                        xyxy_list = torch.tensor(xyxy).view(1, 4).view(-1).tolist()
+                        ai_stage_prediction_results.append('%d %.3f %.3f %.3f %.3f %.3f' % (cls, conf, *xyxy_list))
+
+                if ai_stage:
+                    with open(save_ai_stage_csv, 'a', newline='') as f:
+                        writer = csv.writer(f)
+                        writer.writerow(
+                            ['test/' + p.stem + '.jpg', ' '.join(reversed(ai_stage_prediction_results))])
 
             # Print time (inference-only)
             print(f'{s}Done. ({t3 - t2:.3f}s)')
@@ -280,6 +300,7 @@ def parse_opt():
     parser.add_argument('--hide-labels', default=False, action='store_true', help='hide labels')
     parser.add_argument('--hide-conf', default=False, action='store_true', help='hide confidences')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
+    parser.add_argument('--ai_stage', action='store_true', help='save csv file for submission to AI Stage')
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(FILE.stem, opt)
