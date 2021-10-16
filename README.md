@@ -51,7 +51,7 @@ python tools/train.py configs/boostcamp_trash_PVTv2_b3_custom/final.py
 
 ### UniverseNet-101
 ```python
-cd/mmdetection
+cd /mmdetection
 python tools/train.py configs/boostcamp/universenet101_gfl_fp16_4x4_mstrain_480_960_2x_coco.py 
 ```
 
