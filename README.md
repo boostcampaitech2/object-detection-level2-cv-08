@@ -316,13 +316,13 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 <table>
   <tr>
-    <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" />
-        <center> mAP 0.672</center>
+    <td><img width="340" src="https://i.imgur.com/IjbLt9r.jpg" /><br/>
+        <p align='center'> mAP 0.672</p>
     </td>
-    <td><img width="300" src="https://i.imgur.com/OuI6iNY.png" /><center>mAP 0.482</center></td>
-    </tr>
-    <tr>
-    </tr>
+    <td><img width="300" src="https://i.imgur.com/OuI6iNY.png" /><br/>
+      <p align='center'> mAP 0.672</p>
+    </td>
+  </tr>
 </table>
 
 
