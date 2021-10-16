@@ -163,14 +163,14 @@ python ensemble.py ensemble.json
 Test set의 mAP50(Mean Average Precision)로 평가
 - Object Detection에서 사용하는 대표적인 성능 측정 방법
 - Ground Truth 박스와 Prediction 박스간 IoU(Intersection Over Union, Detector의 정확도를 평가하는 지표)가 50이 넘는 예측에 대해 True라고 판단합니다.
-- Example of IoU
+- Example of IoU  
         ![](https://i.imgur.com/lb9BsAG.jpg)
 
-- metric
+- metric  
         ![](https://i.imgur.com/7WwZGOb.png)
 
         
-- Example of mAP50
+- Example of mAP50  
         ![](https://i.imgur.com/387jIEL.png)
 
         
