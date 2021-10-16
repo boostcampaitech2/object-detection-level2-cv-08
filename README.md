@@ -287,7 +287,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 더 자세한 기록은 [더보기...](https://docs.google.com/spreadsheets/d/1xw11I8pUZY8CGaE0jXeE4KGokvK-zbpxHdKKYsyt_SI/edit#gid=265349216)
 
 ## 최종 Ensemble된 모형
-<p align="center"><img src="https://i.imgur.com/mFpw3R3.png"></p>
+<p align="center"><img src="https://i.imgur.com/2BvTb4c.png"></p>
 각 model별로 가장 LB score가 좋았던 버전 5개를 Ensemble하여 최종 모델을 생성  
 
 # 회고
