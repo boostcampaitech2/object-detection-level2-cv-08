@@ -332,6 +332,6 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 # Reference
 
-<p><span style="background-color:#EEEEEE;">네이버 커넥트재단 - 재활용 쓰레기 데이터셋 / CC BY 2.0
+<p><span style="background-color:#EEEEEE;">네이버 커넥트재단 - 재활용 쓰레기 데이터셋 / CC BY 2.0<br/>
 https://stages.ai/competitions/76/overview/description
 </span></p>
