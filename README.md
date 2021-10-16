@@ -160,7 +160,7 @@ python ensemble.py ensemble.json
 
 ### 평가 방법
 
-Test set의 mAP50(Mean Average Precision)로 평가
+Test set의 mAP50(Mean Average Precision)로 평가  
 - Object Detection에서 사용하는 대표적인 성능 측정 방법
 - Ground Truth 박스와 Prediction 박스간 IoU(Intersection Over Union, Detector의 정확도를 평가하는 지표)가 50이 넘는 예측에 대해 True라고 판단합니다.
 - Example of IoU  
@@ -212,7 +212,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 <p align="center"><img src="https://i.imgur.com/H27mkEx.png"></p>
 
 
-① Class Dependency
+① Class Dependency  
 - 전단지의 경우 일반 쓰레기와 종이 두 가지로 annotation되어 있음
 - 유리와 투명 플라스틱이 매끈한 표면, 투명함 등 이미지상에서 유사한 특징을 보임
 - 얇은 물체(노끈이나 줄 등)에 대한 background Error가 아주 높은 경향을 보임
@@ -234,14 +234,14 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 ### Issue 및 성능 개선을 위한 시도
 
-① Data Cleansing : Figure 3과 같은 train image의 잘못된 labeling이나 annotation을 수정해 성능 향상을 요함
-② Data Augmentation : Class Imbalance 및 Image의 촬영 환경 보완을 위한 다양한 Augmentation 기법 시도
-→ Randomfog, Blur, RandomBrightness, Cutmix, Mixup, Mosaic, Resize, normalization, MultiScale, RandomFlip
-③ Model Selection : Inductive bias를 최소화하기 위해 다양한 backbone model을 사용하여 학습
-④ Generalization : 여러 Augmentation과 Noise를 넣어 시도,  TTA시도
-⑤ Pseudo Labeling: 학습한 모델로 test 데이터를 inference한 후, 그 결과로 추가 학습
-⑥ Ensemble : 1-stage model 과 2-stage model을 Ensemble 함으로서 Robust한 모델 개선 시도
-⑦ Binary Classification : 각각의 single class를 binary classification 로 학습
+① Data Cleansing : Figure 3과 같은 train image의 잘못된 labeling이나 annotation을 수정해 성능 향상을 요함  
+② Data Augmentation : Class Imbalance 및 Image의 촬영 환경 보완을 위한 다양한 Augmentation 기법 시도  
+→ Randomfog, Blur, RandomBrightness, Cutmix, Mixup, Mosaic, Resize, normalization, MultiScale, RandomFlip  
+③ Model Selection : Inductive bias를 최소화하기 위해 다양한 backbone model을 사용하여 학습  
+④ Generalization : 여러 Augmentation과 Noise를 넣어 시도,  TTA시도  
+⑤ Pseudo Labeling: 학습한 모델로 test 데이터를 inference한 후, 그 결과로 추가 학습  
+⑥ Ensemble : 1-stage model 과 2-stage model을 Ensemble 함으로서 Robust한 모델 개선 시도  
+⑦ Binary Classification : 각각의 single class를 binary classification 로 학습  
 
 
 ## 실험 히스토리
