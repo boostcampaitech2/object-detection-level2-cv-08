@@ -248,20 +248,15 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 
 ## 실험 히스토리
-<p align="center">Wandb를 활용한 실험 관리</p>
+<p align="center"><b>Wandb를 활용한 실험 관리</b></p>
 
 ![](https://i.imgur.com/D44tEOj.png)
 
-<div>
-<center>Yolo-V5 augmentation test</center>
-</div>
+<p align="center">Yolo-V5 augmentation test</p>
 
 ![](https://i.imgur.com/o9KD9yU.png)
 
-
-<div>
-<center>UniverseNet101 augmentation test</center>
-</div>
+<p align="center">UniverseNet101 augmentation test</p>
 
 ![](https://i.imgur.com/h5pEg83.png)
 
@@ -271,10 +266,8 @@ Test set의 mAP50(Mean Average Precision)로 평가
 - Stratified validation과 Confusion Matrix를 통해 분류 모델 평가
 
 
+<p align="center"><img src="https://i.imgur.com/xK3RTJ3.png"></p>
 
-<div>
-<center><img src="https://i.imgur.com/xK3RTJ3.png"></center>
-</div>
 
 <br>
 <br>
@@ -300,7 +293,7 @@ Test set의 mAP50(Mean Average Precision)로 평가
 
 각 model별로 가장 LB score가 좋았던 버전 5개를 Ensemble하여 최종 모델을 생성하였습니다.
 
-**그림그림그림그림그림그림그림그림그림그림그림그림그림그림그림그림그림그림**
+**그림**
 
 # 회고
 
@@ -327,7 +320,9 @@ Test set의 mAP50(Mean Average Precision)로 평가
         <center> mAP 0.672</center>
     </td>
     <td><img width="300" src="https://i.imgur.com/OuI6iNY.png" /><center>mAP 0.482</center></td>
-  <tr>
+    </tr>
+    <tr>
+    </tr>
 </table>
 
 
